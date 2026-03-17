@@ -1,0 +1,5 @@
+time=2026-03-17T15:32:59.010+05:00 level=INFO msg="API Gateway started successfully!"
+time=2026-03-17T15:33:02.796+05:00 level=ERROR msg="Error initializing Redis" error="redis connection failed: dial tcp [::1]:6379: connectex: No connection could be made because the target machine actively refused it."
+time=2026-03-17T15:33:18.592+05:00 level=INFO msg="API Gateway started successfully!"
+time=2026-03-17T15:33:18.684+05:00 level=ERROR msg="Error creating Casbin adapter" error="pq: trailing junk after parameter at or near \"$1AND\""
+time=2026-03-17T15:33:18.684+05:00 level=ERROR msg="Error initializing enforcer" error="pq: trailing junk after parameter at or near \"$1AND\""

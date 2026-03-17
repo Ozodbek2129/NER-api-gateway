@@ -13,6 +13,9 @@ type Config struct {
 	PRODUCTION_SERVICE string
 	SIGNING_KEY        string
 	API_GATEWAY        string
+	REDIS_PORT         string
+	REDIS_PASS         string
+	REDIS_DB           int
 }
 
 func Load() Config {
@@ -25,6 +28,9 @@ func Load() Config {
 	config.SIGNING_KEY = cast.ToString(Coalesce("SIGNING_KEY", "nimadurGo11"))
 	config.API_GATEWAY = cast.ToString(Coalesce("API_GATEWAY", ":9876"))
 	config.PRODUCTION_SERVICE = cast.ToString(Coalesce("PRODUCTION_SERVICE", ":50052"))
+	config.REDIS_PORT = cast.ToString(Coalesce("REDIS_PORT", "localhost:6379"))
+	config.REDIS_PASS = cast.ToString(Coalesce("REDIS_PASS", ""))
+	config.REDIS_DB = cast.ToInt(Coalesce("REDIS_DB", 0))
 
 	return config
 }
