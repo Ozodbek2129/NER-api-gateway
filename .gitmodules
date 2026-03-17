@@ -1,0 +1,3 @@
+[submodule "ner-apk-proto"]
+	path = ner-apk-proto
+	url = git@github.com:Ozodbek2129/ner-apk-proto.git
