@@ -6,6 +6,7 @@ import (
 
 	"github.com/casbin/casbin/v2"
 	xormadapter "github.com/casbin/xorm-adapter/v2"
+	_ "github.com/lib/pq"
 )
 
 const (
@@ -47,19 +48,19 @@ func CasbinEnforcer(logger *slog.Logger) (*casbin.Enforcer, error) {
 		{"super", "/api/user/delete_user/:id", "DELETE"},
 		{"super", "/api/user/update_role", "PUT"},
 		{"super", "/api/user/image_update", "PUT"},
-		{"super", "/api/user/all_users/:limit/:page", "GET"},
+		{"super", "/api/user/all_users", "GET"},
 		{"super", "/api/user/logout", "POST"},
 
 		{"super", "/api/contract/newcontract", "POST"},
 		{"super", "/api/contract/contract_update", "PUT"},
 		{"super", "/api/contract/contract_delete/:id", "DELETE"},
 		{"super", "/api/contract/get_name/:name", "GET"},
-		{"super", "/api/contract/all_contract/:limit/:page", "GET"},
+		{"super", "/api/contract/all_contract", "GET"},
 
 		{"super", "/api/contract/inside_contract", "POST"},
 		{"super", "/api/contract/insidecontract_update", "PUT"},
 		{"super", "/api/contract/insidecontract_delete/:id", "DELETE"},
-		{"super", "/api/contract/all_insidecontract/:limit/:page", "GET"},
+		{"super", "/api/contract/all_insidecontract", "GET"},
 
 		// admin
 		{"admin", "/api/user/update_password", "PUT"},

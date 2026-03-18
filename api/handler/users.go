@@ -19,6 +19,15 @@ import (
 	"github.com/minio/minio-go/v7/pkg/credentials"
 )
 
+// @Summary Get user by email
+// @Description Get user information using email
+// @Tags user
+// @Produce json
+// @Param email path string true "User Email"
+// @Success 200 {object} user.GetUserResponse
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/getbyuser/{email} [get]
 func (h Handler) GetUSerByEmail(c *gin.Context) {
 	req := pbu.GetUSerByEmailReq{
 		Email: c.Param("email"),
@@ -36,6 +45,17 @@ func (h Handler) GetUSerByEmail(c *gin.Context) {
 	c.JSON(200, res)
 }
 
+// @Summary Update password
+// @Description Update user password
+// @Tags user
+// @Accept json
+// @Produce json
+// @Param body body user.UpdatePasswordReq true "Update Password"
+// @Success 200 {object} user.UpdatePasswordRes
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/update_password [put]
 func (h Handler) UpdatePassword(c *gin.Context) {
 	req := pbu.UpdatePasswordReq{}
 
@@ -56,6 +76,15 @@ func (h Handler) UpdatePassword(c *gin.Context) {
 	c.JSON(200, res)
 }
 
+// @Summary Delete user
+// @Description Delete user by ID
+// @Tags user
+// @Produce json
+// @Param id path string true "User ID"
+// @Success 200 {object} user.UserId
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/delete_user/{id} [delete]
 func (h Handler) DeleteUser(c *gin.Context) {
 	req := pbu.UserId{
 		Id: c.Param("id"),
@@ -73,6 +102,17 @@ func (h Handler) DeleteUser(c *gin.Context) {
 	c.JSON(200, res)
 }
 
+// @Summary Update user role
+// @Description Change user role (admin, user, super)
+// @Tags user
+// @Accept json
+// @Produce json
+// @Param body body user.UpdateRoleReq true "Update Role"
+// @Success 200 {object} user.UpdateRoleRes
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/update_role [put]
 func (h Handler) UpdateRole(c *gin.Context) {
 	req := pbu.UpdateRoleReq{}
 
@@ -93,6 +133,18 @@ func (h Handler) UpdateRole(c *gin.Context) {
 	c.JSON(200, res)
 }
 
+// @Summary Upload profile image
+// @Description Upload user profile image to MinIO
+// @Tags user
+// @Accept multipart/form-data
+// @Produce json
+// @Param email path string true "User Email"
+// @Param file formData file true "Image file"
+// @Success 201 {object} map[string]interface{}
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/image_update/{email} [put]
 func (h Handler) ProfileImage(c *gin.Context) {
 	var file models.File
 	email := c.Param("email")
@@ -210,6 +262,17 @@ func (h Handler) ProfileImage(c *gin.Context) {
 	})
 }
 
+// @Summary Get all users
+// @Description Get all users with pagination
+// @Tags user
+// @Produce json
+// @Param limit query int true "Limit"
+// @Param page query int true "Page"
+// @Success 200 {object} user.GetAllUsersRes
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/all_users [get]
 func (h Handler) GetAllUsers(c *gin.Context) {
 	limitStr := c.Query("limit")
 	pageStr := c.Query("page")
@@ -247,6 +310,16 @@ func (h Handler) GetAllUsers(c *gin.Context) {
 	c.JSON(200, res)
 }
 
+// @Summary Logout user
+// @Description Logout user and blacklist token
+// @Tags user
+// @Produce json
+// @Param Authorization header string true "Bearer token"
+// @Success 200 {object} map[string]string
+// @Failure 400 {object} map[string]interface{}
+// @Failure 500 {object} map[string]interface{}
+// @Security BearerAuth
+// @Router /api/user/logout [post]
 func (h *Handler) Logout(c *gin.Context) {
 	authHeader := c.GetHeader("Authorization")
 	if authHeader == "" || !strings.HasPrefix(authHeader, "Bearer ") {

@@ -7,9 +7,22 @@ import (
 	"gateway/redis"
 	"log/slog"
 
+	_ "gateway/api/docs"
+
 	"github.com/casbin/casbin/v2"
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
+
+// @title Gateway API
+// @version 1.0
+// @description Gateway service with Casbin & JWT
+// @host localhost:4030
+// @BasePath /
+// @securityDefinitions.apikey BearerAuth
+// @in header
+// @name Authorization
 
 type Controller interface {
 	SetupRoutes(handler.Handler, *slog.Logger)
@@ -37,6 +50,8 @@ func (c *controllerImpl) StartServer(cfg config.Config) error {
 }
 
 func (c *controllerImpl) SetupRoutes(h handler.Handler, logger *slog.Logger) {
+	c.Router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
 	// Middleware instancelarini yaratish
 	authMiddleware := middleware.NewAuthMiddleware(c.Redis)
 	casbinMiddleware := middleware.NewCasbinMiddleware(c.Enforcer)
@@ -51,8 +66,8 @@ func (c *controllerImpl) SetupRoutes(h handler.Handler, logger *slog.Logger) {
 		users.PUT("/update_password", h.UpdatePassword)
 		users.DELETE("/delete_user/:id", h.DeleteUser)
 		users.PUT("/update_role", h.UpdateRole)
-		users.PUT("/image_update", h.ProfileImage)
-		users.GET("/all_users/:limit/:page", h.GetAllUsers)
+		users.PUT("/image_update/:email", h.ProfileImage)
+		users.GET("/all_users", h.GetAllUsers)
 		users.POST("/logout", h.Logout)
 	}
 
@@ -62,11 +77,11 @@ func (c *controllerImpl) SetupRoutes(h handler.Handler, logger *slog.Logger) {
 		contract.PUT("/contract_update", h.NewContractUpdate)
 		contract.DELETE("/contract_delete/:id", h.NewContractDelete)
 		contract.GET("/get_name/:name", h.NewContractGetName)
-		contract.GET("/all_contract/:limit/:page", h.NewContractGetAll)
+		contract.GET("/all_contract", h.NewContractGetAll)
 
 		contract.POST("/inside_contract", h.NewInsideTheContract)
 		contract.PUT("/insidecontract_update", h.NewInsideTheContractUpdate)
 		contract.DELETE("/insidecontract_delete/:id", h.NewInsideTheContractDelete)
-		contract.GET("/all_insidecontract/:limit/:page", h.NewInsideTheContractGetAll)
+		contract.GET("/all_insidecontract", h.NewInsideTheContractGetAll)
 	}
 }

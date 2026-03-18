@@ -25,44 +25,40 @@ func (m *AuthMiddleware) Check() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		accessToken := c.GetHeader("Authorization")
 		if accessToken == "" {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "Authorization header is required"})
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "authorization header required"})
 			return
 		}
 
 		tokenStr := strings.TrimPrefix(accessToken, "Bearer ")
 
-		// Redis blacklist check
 		isBlacklisted, err := m.Redis.IsBlacklisted(tokenStr)
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusInternalServerError, gin.H{"error": "redis error"})
 			return
 		}
-
 		if isBlacklisted {
 			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "token revoked"})
 			return
 		}
 
-		// JWT validation
-		claims, err := auth.ValidateAccessToken(accessToken)
+		claims, err := auth.ValidateAccessToken(tokenStr)
 		if err != nil {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": err.Error()})
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid token"})
 			return
 		}
 
-		userID, ok1 := claims["user_id"].(string)
-		role, ok2 := claims["role"].(string)
-		if !ok1 {
-			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid user_id in token"})
+		userID, _ := claims["user_id"].(string)
+		role, ok := claims["role"].(string)
+		if userID == "" {
+			c.AbortWithStatusJSON(http.StatusUnauthorized, gin.H{"error": "invalid user_id"})
 			return
 		}
-		if !ok2 {
-			role = "user" // default role
+		if !ok || role == "" {
+			role = "user"
 		}
 
 		c.Set("user_id", userID)
 		c.Set("role", role)
-
 		c.Next()
 	}
 }

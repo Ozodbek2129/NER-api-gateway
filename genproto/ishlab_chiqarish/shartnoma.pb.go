@@ -294,6 +294,7 @@ type NewInsideTheContractUpdateReq struct {
 	ContractId    string                 `protobuf:"bytes,1,opt,name=contract_id,json=contractId,proto3" json:"contract_id,omitempty"`
 	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
 	Price         string                 `protobuf:"bytes,3,opt,name=price,proto3" json:"price,omitempty"`
+	Id            string                 `protobuf:"bytes,4,opt,name=id,proto3" json:"id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -345,6 +346,13 @@ func (x *NewInsideTheContractUpdateReq) GetName() string {
 func (x *NewInsideTheContractUpdateReq) GetPrice() string {
 	if x != nil {
 		return x.Price
+	}
+	return ""
+}
+
+func (x *NewInsideTheContractUpdateReq) GetId() string {
+	if x != nil {
+		return x.Id
 	}
 	return ""
 }
@@ -1180,12 +1188,13 @@ const file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDesc = "" +
 	"\x1dNewInsideTheContractDeleteReq\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\"9\n" +
 	"\x1dNewInsideTheContractDeleteRes\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage\"j\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"z\n" +
 	"\x1dNewInsideTheContractUpdateReq\x12\x1f\n" +
 	"\vcontract_id\x18\x01 \x01(\tR\n" +
 	"contractId\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
-	"\x05price\x18\x03 \x01(\tR\x05price\"9\n" +
+	"\x05price\x18\x03 \x01(\tR\x05price\x12\x0e\n" +
+	"\x02id\x18\x04 \x01(\tR\x02id\"9\n" +
 	"\x1dNewInsideTheContractUpdateRes\x12\x18\n" +
 	"\amessage\x18\x01 \x01(\tR\amessage\"d\n" +
 	"\x17NewInsideTheContractReq\x12\x1f\n" +

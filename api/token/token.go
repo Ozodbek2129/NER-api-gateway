@@ -5,19 +5,20 @@ import (
 	"gateway/config"
 	"strings"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt/v5"
 )
-
-var cfg = config.Load()
 
 func extractToken(tokenStr string) string {
 	return strings.TrimPrefix(tokenStr, "Bearer ")
 }
 
-func ValidateAccessToken(tokenStr string) (jwt.MapClaims, error) {
-	tokenStr = extractToken(tokenStr)
+func parseToken(tokenStr string) (jwt.MapClaims, error) {
+	cfg := config.Load()
 
 	token, err := jwt.Parse(tokenStr, func(t *jwt.Token) (interface{}, error) {
+		if _, ok := t.Method.(*jwt.SigningMethodHMAC); !ok {
+			return nil, errors.New("unexpected signing method")
+		}
 		return []byte(cfg.SIGNING_KEY), nil
 	})
 	if err != nil || !token.Valid {
@@ -32,19 +33,14 @@ func ValidateAccessToken(tokenStr string) (jwt.MapClaims, error) {
 	return claims, nil
 }
 
+func ValidateAccessToken(tokenStr string) (jwt.MapClaims, error) {
+	return parseToken(extractToken(tokenStr))
+}
+
 func GetUserInfoFromAccessToken(tokenStr string) (string, string, string, error) {
-	tokenStr = extractToken(tokenStr)
-
-	token, err := jwt.Parse(tokenStr, func(t *jwt.Token) (interface{}, error) {
-		return []byte(cfg.SIGNING_KEY), nil
-	})
-	if err != nil || !token.Valid {
-		return "", "", "", errors.New("invalid token")
-	}
-
-	claims, ok := token.Claims.(jwt.MapClaims)
-	if !ok {
-		return "", "", "", errors.New("invalid claims")
+	claims, err := parseToken(extractToken(tokenStr))
+	if err != nil {
+		return "", "", "", err
 	}
 
 	userID, ok1 := claims["user_id"].(string)

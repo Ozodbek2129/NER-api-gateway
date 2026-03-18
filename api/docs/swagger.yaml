@@ -1,0 +1,745 @@
+basePath: /
+definitions:
+  ishlab_chiqarish.Contract:
+    properties:
+      contract_deadline:
+        type: string
+      contract_file_url:
+        type: string
+      contract_name:
+        type: string
+      contract_number:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      responsible_person:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractDeleteRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractGetAllRes:
+    properties:
+      contract:
+        items:
+          $ref: '#/definitions/ishlab_chiqarish.Contract'
+        type: array
+    type: object
+  ishlab_chiqarish.NewContractGetNameRes:
+    properties:
+      contract_deadline:
+        type: string
+      contract_file_url:
+        type: string
+      contract_name:
+        type: string
+      contract_number:
+        type: string
+      id:
+        type: string
+      responsible_person:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractReq:
+    properties:
+      contract_deadline:
+        type: string
+      contract_file_url:
+        type: string
+      contract_name:
+        type: string
+      contract_number:
+        type: string
+      responsible_person:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractUpdateReq:
+    properties:
+      contract_deadline:
+        type: string
+      contract_file_url:
+        type: string
+      contract_name:
+        type: string
+      contract_number:
+        type: string
+      id:
+        type: string
+      responsible_person:
+        type: string
+    type: object
+  ishlab_chiqarish.NewContractUpdateRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractDeleteRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractGetAllRes:
+    properties:
+      all:
+        items:
+          $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractt'
+        type: array
+    type: object
+  ishlab_chiqarish.NewInsideTheContractReq:
+    properties:
+      contract_id:
+        type: string
+      name:
+        type: string
+      price:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractUpdateReq:
+    properties:
+      contract_id:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractUpdateRes:
+    properties:
+      message:
+        type: string
+    type: object
+  ishlab_chiqarish.NewInsideTheContractt:
+    properties:
+      contract_id:
+        type: string
+      created_at:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      price:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  user.GetAllUsersRes:
+    properties:
+      user:
+        items:
+          $ref: '#/definitions/user.Users'
+        type: array
+    type: object
+  user.GetUserResponse:
+    properties:
+      user:
+        $ref: '#/definitions/user.User'
+    type: object
+  user.UpdatePasswordReq:
+    properties:
+      email:
+        type: string
+      new_password:
+        type: string
+      old_password:
+        type: string
+    type: object
+  user.UpdatePasswordRes:
+    properties:
+      message:
+        type: string
+    type: object
+  user.UpdateRoleReq:
+    properties:
+      email:
+        type: string
+      role:
+        type: string
+    type: object
+  user.UpdateRoleRes:
+    properties:
+      message:
+        type: string
+    type: object
+  user.User:
+    properties:
+      created_at:
+        type: string
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      password:
+        type: string
+      role:
+        type: string
+      updated_at:
+        type: string
+    type: object
+  user.UserId:
+    properties:
+      id:
+        type: string
+    type: object
+  user.Users:
+    properties:
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: string
+      last_name:
+        type: string
+      role:
+        type: string
+    type: object
+host: localhost:4030
+info:
+  contact: {}
+  description: Gateway service with Casbin & JWT
+  title: Gateway API
+  version: "1.0"
+paths:
+  /api/contract/all_contract:
+    get:
+      description: Get all contracts with pagination
+      parameters:
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: Page
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewContractGetAllRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get all contracts
+      tags:
+      - contract
+  /api/contract/all_insidecontract:
+    get:
+      description: Get all inside contracts with pagination
+      parameters:
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: Page
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractGetAllRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get all inside contracts
+      tags:
+      - inside_contract
+  /api/contract/contract_delete/{id}:
+    delete:
+      description: Delete contract by ID
+      parameters:
+      - description: Contract ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewContractDeleteRes'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Delete contract
+      tags:
+      - contract
+  /api/contract/contract_update:
+    put:
+      consumes:
+      - application/json
+      description: Update existing contract
+      parameters:
+      - description: Update Contract
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ishlab_chiqarish.NewContractUpdateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewContractUpdateRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Update contract
+      tags:
+      - contract
+  /api/contract/get_name/{name}:
+    get:
+      description: Get contract using name
+      parameters:
+      - description: Contract Name
+        in: path
+        name: name
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewContractGetNameRes'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get contract by name
+      tags:
+      - contract
+  /api/contract/inside_contract:
+    post:
+      consumes:
+      - application/json
+      description: Create inside contract
+      parameters:
+      - description: Inside Contract
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create inside contract
+      tags:
+      - inside_contract
+  /api/contract/insidecontract_delete/{id}:
+    delete:
+      description: Delete inside contract by ID
+      parameters:
+      - description: Inside Contract ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractDeleteRes'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Delete inside contract
+      tags:
+      - inside_contract
+  /api/contract/insidecontract_update:
+    put:
+      consumes:
+      - application/json
+      description: Update inside contract
+      parameters:
+      - description: Update Inside Contract
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractUpdateReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewInsideTheContractUpdateRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Update inside contract
+      tags:
+      - inside_contract
+  /api/contract/newcontract:
+    post:
+      consumes:
+      - application/json
+      description: Create a new contract
+      parameters:
+      - description: New Contract
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/ishlab_chiqarish.NewContractReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/ishlab_chiqarish.NewContractRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Create new contract
+      tags:
+      - contract
+  /api/user/all_users:
+    get:
+      description: Get all users with pagination
+      parameters:
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      - description: Page
+        in: query
+        name: page
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.GetAllUsersRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get all users
+      tags:
+      - user
+  /api/user/delete_user/{id}:
+    delete:
+      description: Delete user by ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.UserId'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Delete user
+      tags:
+      - user
+  /api/user/getbyuser/{email}:
+    get:
+      description: Get user information using email
+      parameters:
+      - description: User Email
+        in: path
+        name: email
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.GetUserResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Get user by email
+      tags:
+      - user
+  /api/user/image_update/{email}:
+    put:
+      consumes:
+      - multipart/form-data
+      description: Upload user profile image to MinIO
+      parameters:
+      - description: User Email
+        in: path
+        name: email
+        required: true
+        type: string
+      - description: Image file
+        in: formData
+        name: file
+        required: true
+        type: file
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            additionalProperties: true
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Upload profile image
+      tags:
+      - user
+  /api/user/logout:
+    post:
+      description: Logout user and blacklist token
+      parameters:
+      - description: Bearer token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Logout user
+      tags:
+      - user
+  /api/user/update_password:
+    put:
+      consumes:
+      - application/json
+      description: Update user password
+      parameters:
+      - description: Update Password
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/user.UpdatePasswordReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.UpdatePasswordRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Update password
+      tags:
+      - user
+  /api/user/update_role:
+    put:
+      consumes:
+      - application/json
+      description: Change user role (admin, user, super)
+      parameters:
+      - description: Update Role
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/user.UpdateRoleReq'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.UpdateRoleRes'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "500":
+          description: Internal Server Error
+          schema:
+            additionalProperties: true
+            type: object
+      security:
+      - BearerAuth: []
+      summary: Update user role
+      tags:
+      - user
+securityDefinitions:
+  BearerAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"
