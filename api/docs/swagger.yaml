@@ -46,24 +46,6 @@ definitions:
       responsible_person:
         type: string
     type: object
-  ishlab_chiqarish.NewContractReq:
-    properties:
-      contract_deadline:
-        type: string
-      contract_file_url:
-        type: string
-      contract_name:
-        type: string
-      contract_number:
-        type: string
-      responsible_person:
-        type: string
-    type: object
-  ishlab_chiqarish.NewContractRes:
-    properties:
-      message:
-        type: string
-    type: object
   ishlab_chiqarish.NewContractUpdateReq:
     properties:
       contract_deadline:
@@ -216,7 +198,7 @@ definitions:
       role:
         type: string
     type: object
-host: localhost:4030
+host: 192.168.0.44:4030
 info:
   contact: {}
   description: Gateway service with Casbin & JWT
@@ -478,22 +460,42 @@ paths:
   /api/contract/newcontract:
     post:
       consumes:
-      - application/json
-      description: Create a new contract
+      - multipart/form-data
+      description: Create a new contract with file upload
       parameters:
-      - description: New Contract
-        in: body
-        name: body
+      - description: Contract Name
+        in: formData
+        name: contract_name
         required: true
-        schema:
-          $ref: '#/definitions/ishlab_chiqarish.NewContractReq'
+        type: string
+      - description: Contract Number
+        in: formData
+        name: contract_number
+        required: true
+        type: string
+      - description: Deadline
+        in: formData
+        name: contract_deadline
+        required: true
+        type: string
+      - description: Responsible Person
+        in: formData
+        name: responsible_person
+        required: true
+        type: string
+      - description: Contract File
+        in: formData
+        name: file
+        required: true
+        type: file
       produces:
       - application/json
       responses:
         "200":
           description: OK
           schema:
-            $ref: '#/definitions/ishlab_chiqarish.NewContractRes'
+            additionalProperties: true
+            type: object
         "400":
           description: Bad Request
           schema:

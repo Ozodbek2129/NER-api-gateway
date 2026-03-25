@@ -414,9 +414,9 @@ const docTemplate = `{
                         "BearerAuth": []
                     }
                 ],
-                "description": "Create a new contract",
+                "description": "Create a new contract with file upload",
                 "consumes": [
-                    "application/json"
+                    "multipart/form-data"
                 ],
                 "produces": [
                     "application/json"
@@ -427,20 +427,47 @@ const docTemplate = `{
                 "summary": "Create new contract",
                 "parameters": [
                     {
-                        "description": "New Contract",
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/ishlab_chiqarish.NewContractReq"
-                        }
+                        "type": "string",
+                        "description": "Contract Name",
+                        "name": "contract_name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Contract Number",
+                        "name": "contract_number",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Deadline",
+                        "name": "contract_deadline",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Responsible Person",
+                        "name": "responsible_person",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "Contract File",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ishlab_chiqarish.NewContractRes"
+                            "type": "object",
+                            "additionalProperties": true
                         }
                     },
                     "400": {
@@ -886,34 +913,6 @@ const docTemplate = `{
                 }
             }
         },
-        "ishlab_chiqarish.NewContractReq": {
-            "type": "object",
-            "properties": {
-                "contract_deadline": {
-                    "type": "string"
-                },
-                "contract_file_url": {
-                    "type": "string"
-                },
-                "contract_name": {
-                    "type": "string"
-                },
-                "contract_number": {
-                    "type": "string"
-                },
-                "responsible_person": {
-                    "type": "string"
-                }
-            }
-        },
-        "ishlab_chiqarish.NewContractRes": {
-            "type": "object",
-            "properties": {
-                "message": {
-                    "type": "string"
-                }
-            }
-        },
         "ishlab_chiqarish.NewContractUpdateReq": {
             "type": "object",
             "properties": {
@@ -1164,7 +1163,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:4030",
+	Host:             "192.168.0.44:4030",
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "Gateway API",

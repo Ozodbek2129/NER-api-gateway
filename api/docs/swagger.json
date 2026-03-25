@@ -6,7 +6,7 @@
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:4030",
+    "host": "192.168.0.44:4030",
     "basePath": "/",
     "paths": {
         "/api/contract/all_contract": {
@@ -408,9 +408,9 @@
                         "BearerAuth": []
                     }
                 ],
-                "description": "Create a new contract",
+                "description": "Create a new contract with file upload",
                 "consumes": [
-                    "application/json"
+                    "multipart/form-data"
                 ],
                 "produces": [
                     "application/json"
@@ -421,20 +421,47 @@
                 "summary": "Create new contract",
                 "parameters": [
                     {
-                        "description": "New Contract",
-                        "name": "body",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/ishlab_chiqarish.NewContractReq"
-                        }
+                        "type": "string",
+                        "description": "Contract Name",
+                        "name": "contract_name",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Contract Number",
+                        "name": "contract_number",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Deadline",
+                        "name": "contract_deadline",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Responsible Person",
+                        "name": "responsible_person",
+                        "in": "formData",
+                        "required": true
+                    },
+                    {
+                        "type": "file",
+                        "description": "Contract File",
+                        "name": "file",
+                        "in": "formData",
+                        "required": true
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "schema": {
-                            "$ref": "#/definitions/ishlab_chiqarish.NewContractRes"
+                            "type": "object",
+                            "additionalProperties": true
                         }
                     },
                     "400": {
@@ -876,34 +903,6 @@
                     "type": "string"
                 },
                 "responsible_person": {
-                    "type": "string"
-                }
-            }
-        },
-        "ishlab_chiqarish.NewContractReq": {
-            "type": "object",
-            "properties": {
-                "contract_deadline": {
-                    "type": "string"
-                },
-                "contract_file_url": {
-                    "type": "string"
-                },
-                "contract_name": {
-                    "type": "string"
-                },
-                "contract_number": {
-                    "type": "string"
-                },
-                "responsible_person": {
-                    "type": "string"
-                }
-            }
-        },
-        "ishlab_chiqarish.NewContractRes": {
-            "type": "object",
-            "properties": {
-                "message": {
                     "type": "string"
                 }
             }

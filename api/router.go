@@ -18,7 +18,7 @@ import (
 // @title Gateway API
 // @version 1.0
 // @description Gateway service with Casbin & JWT
-// @host localhost:4030
+// @host 192.168.0.44:4030
 // @BasePath /
 // @securityDefinitions.apikey BearerAuth
 // @in header
