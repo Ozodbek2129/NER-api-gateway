@@ -999,6 +999,9 @@ const docTemplate = `{
                 },
                 "price": {
                     "type": "string"
+                },
+                "situation": {
+                    "type": "string"
                 }
             }
         },
@@ -1026,6 +1029,9 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "price": {
+                    "type": "string"
+                },
+                "situation": {
                     "type": "string"
                 },
                 "updated_at": {

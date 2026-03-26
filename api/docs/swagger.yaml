@@ -102,6 +102,8 @@ definitions:
         type: string
       price:
         type: string
+      situation:
+        type: string
     type: object
   ishlab_chiqarish.NewInsideTheContractUpdateRes:
     properties:
@@ -119,6 +121,8 @@ definitions:
       name:
         type: string
       price:
+        type: string
+      situation:
         type: string
       updated_at:
         type: string

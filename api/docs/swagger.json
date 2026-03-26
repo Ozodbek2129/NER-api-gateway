@@ -993,6 +993,9 @@
                 },
                 "price": {
                     "type": "string"
+                },
+                "situation": {
+                    "type": "string"
                 }
             }
         },
@@ -1020,6 +1023,9 @@
                     "type": "string"
                 },
                 "price": {
+                    "type": "string"
+                },
+                "situation": {
                     "type": "string"
                 },
                 "updated_at": {

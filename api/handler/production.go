@@ -50,7 +50,7 @@ func (h Handler) NewContract(c *gin.Context) {
 	}
 
 	// 🔹 MinIO client
-	minioClient, err := minio.New("localhost:9000", &minio.Options{
+	minioClient, err := minio.New("192.168.0.44:9000", &minio.Options{
 		Creds:  credentials.NewStaticV4("minio", "minioadmin", ""),
 		Secure: false,
 	})
@@ -68,12 +68,32 @@ func (h Handler) NewContract(c *gin.Context) {
 		return
 	}
 
+	// 🔹 agar yo‘q bo‘lsa yaratamiz
 	if !exists {
 		err = minioClient.MakeBucket(context.Background(), bucketName, minio.MakeBucketOptions{})
 		if err != nil {
 			c.JSON(500, gin.H{"error": err.Error()})
 			return
 		}
+	}
+
+	// 🔥 KEYIN policy beriladi (to‘g‘ri joy)
+	policy := `{
+		"Version":"2012-10-17",
+		"Statement":[
+			{
+				"Effect":"Allow",
+				"Principal":"*",
+				"Action":["s3:GetObject"],
+				"Resource":["arn:aws:s3:::` + bucketName + `/*"]
+			}
+		]
+	}`
+
+	err = minioClient.SetBucketPolicy(context.Background(), bucketName, policy)
+	if err != nil {
+		c.JSON(500, gin.H{"error": err.Error()})
+		return
 	}
 
 	// 🔹 unique file name
@@ -87,7 +107,7 @@ func (h Handler) NewContract(c *gin.Context) {
 		newFileName,
 		filePath,
 		minio.PutObjectOptions{
-			ContentType: "application/octet-stream",
+			ContentType: "application/pdf", // 🔥 tuzatildi
 		},
 	)
 	if err != nil {
@@ -96,7 +116,7 @@ func (h Handler) NewContract(c *gin.Context) {
 	}
 
 	// 🔹 file URL
-	fileURL := fmt.Sprintf("http://localhost:9000/%s/%s", bucketName, newFileName)
+	fileURL := fmt.Sprintf("http://192.168.0.44:9000/%s/%s", bucketName, newFileName)
 
 	// 🔹 service request
 	serviceReq := pbp.NewContractReq{
