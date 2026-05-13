@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>EP000000000519</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap" rel="stylesheet">
+    <meta name="csrf-param" content="_csrf-frontend">
+<meta name="csrf-token" content="tb9BKRzP8Y6qGMOHqR24yBkmB8Nb_RKj3dLLxnB8BFGM5SZjRKKz1-ZRh96cKPS-KlxwqATLV5WCq6L2BBRrCQ==">
+
+<link href="/css/bootstrap/bootstrap.css" rel="stylesheet">
+<link href="/css/fontawesome/fontawesome.css" rel="stylesheet">
+<link href="/css/fontawesome/regular.css" rel="stylesheet">
+<link href="/css/fontawesome/brands.css" rel="stylesheet">
+<link href="/css/fontawesome/solid.css" rel="stylesheet">
+<link href="/css/owlCarousel/owl.carousel.min.css" rel="stylesheet">
+<link href="/css/owlCarousel/owl.theme.default.min.css" rel="stylesheet">
+<link href="/css/animate/animate.css" rel="stylesheet">
+<link href="/css/module.css" rel="stylesheet">
+<link href="/css/main.css" rel="stylesheet">
+<link href="/css/site.css" rel="stylesheet"></head>
+<body>
+
+        <style>
+    .link-mobile {
+        background-color: #0f0cd2;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 5px 15px;
+        min-height: 30px;
+        min-width: 120px;
+    }
+
+    .link-mobile:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .reklama-mobile {
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 20px 5px;
+        margin: 0 auto;
+
+        background-color: white;
+    }
+
+    .link-mobile,
+    .title-mobile-max,
+    .title-mobile-min {
+        font-family: 'Montserrat';
+        font-style: normal;
+    }
+
+    .title-mobile-max {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .title-mobile-min {
+        font-size: 10px;
+    }
+
+    .logo-mobile {
+        padding: 2px;
+        border: 1px solid lightgray;
+        margin: 2px;
+        border-radius: 10px;
+    }
+
+    .display-none {
+        display: none !important;
+    }
+
+    @media screen and (min-width: 849px) {
+        .reklama-mobile {
+            width: 180mm;
+            margin-top: 20px;
+        }
+
+        .ticket-wrap {
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .tickets {
+            box-shadow: 0 10px 15px rgb(0 0 0 / 30%);
+        }
+
+    }
+</style>
+
+<div class="d-flex justify-content-around align-items-center reklama-mobile">
+
+    <div class="d-flex justify-content-around align-items-center">
+        <div class="button-x-mobile">
+            <svg fill="#4a4a4a" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-46.08 -46.08 552.93 552.93" xml:space="preserve"
+                 stroke="#4a4a4a">
+
+                <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC"
+                   stroke-width="0.9215500000000001"/>
+
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M285.08,230.397L456.218,59.27c6.076-6.077,6.076-15.911,0-21.986L423.511,4.565c-2.913-2.911-6.866-4.55-10.992-4.55 c-4.127,0-8.08,1.639-10.993,4.55l-171.138,171.14L59.25,4.565c-2.913-2.911-6.866-4.55-10.993-4.55 c-4.126,0-8.08,1.639-10.992,4.55L4.558,37.284c-6.077,6.075-6.077,15.909,0,21.986l171.138,171.128L4.575,401.505 c-6.074,6.077-6.074,15.911,0,21.986l32.709,32.719c2.911,2.911,6.865,4.55,10.992,4.55c4.127,0,8.08-1.639,10.994-4.55 l171.117-171.12l171.118,171.12c2.913,2.911,6.866,4.55,10.993,4.55c4.128,0,8.081-1.639,10.992-4.55l32.709-32.719 c6.074-6.075,6.074-15.909,0-21.986L285.08,230.397z"/>
+                </g>
+
+            </svg>
+        </div>
+        <div class="mx-2">
+            <img src="/check_image/logo-soliq.png" alt="" width="60" class="logo-mobile">
+        </div>
+        <div>
+            <span>
+                <span class="title-mobile-max">SOLIQ</span>
+                <br>
+                <span class="title-mobile-min">mobile ilovasi</span>
+            </span>
+        </div>
+    </div>
+    <div class="right">
+        <a href="https://play.google.com/store/apps/details?id=uz.soliq.mobile&hl=uz&gl=US&pli=1" class="link-mobile">Yuklab olish</a>
+    </div>
+</div>
+
+<div class="ticket-wrap">
+
+    <table width="100%">
+        <tr>
+            <td align="center">
+                <div class="tickets">
+                    
+
+                        <div style="padding: 10px 5px;">
+                            <table width="100%">
+                                <tr>
+                                    <td colspan="3" align="center">
+                                        <h3>Savdo cheki/Sotuv</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3" align="center">
+                                        <h3 style="font-weight: bold">"PAYNET" AJ</h3>
+                                        Мухандислар МФЙ, Ш.Руставели кучаси, 53б-уй                                        <i>205916449</i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <b>EP000000000519</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="left">Chek raqami : <b>1600724061</b></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">
+                                        <span class="left">Marketpleys nomi : <b><b>PAYNET</b></span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td style="padding-bottom: 3px" colspan="3">
+                                        <i>08.01.2026, 16:54</i>
+                                    </td>
+                                </tr>
+
+                                <tr style="border-bottom: 1px dashed black; border-top: 1px dashed black">
+                                    <td colspan="3">
+                                        <table class="products-tables">
+                                            <thead>
+                                            <tr style="font-size: 10px;font-weight: bold">
+                                                <td class="name-col"><b>Nomi</b></td>
+                                                <td><b>     Soni </b></td>
+                                                <!--                                <td><b>Chegirma</b></td>-->
+                                                <!--                                <td><b>Boshqa</b></td>-->
+                                                <td><b>     Narxi </b></td>
+                                            </tr>
+                                            <Tr>
+
+                                            </Tr>
+                                            </thead>
+                                            <tbody>
+                                            
+
+                                                <tr class="products-row">
+                                                    <td>Газ Бухара кубический метр  </td>
+                                                    <td align="center">
+                                                                                                                    1                                                        
+                                                    </td>
+
+                                                    <td class="price-sum">50,000.00  </td>
+                                                </tr>
+
+
+                                                <tr class="nds-row">
+                                                    <td align="left" colspan="2">
+                                                        QQS qiymati
+                                                    </td>
+                                                    <td class="nds-sum">5,357.14 </td>
+                                                </tr>
+                                                <tr class="nds-row">
+                                                    <td align="left" colspan="2">
+                                                        QQS foizi
+                                                    </td>
+                                                    <td class="nds-sum">12 % </td>
+                                                </tr>
+                                                <tr class="code-row">
+                                                    <td align="left" colspan="1">
+                                                        Chegirma/Boshqa
+                                                    </td>
+                                                    <td align="right" colspan="2">
+                                                        0/0                                                    </td>
+                                                </tr>
+                                                                                                <tr class="code-row">
+                                                    <td align="left" colspan="1">
+                                                        Shtrix kodi
+                                                    </td>
+                                                    <td align="right" colspan="2">
+                                                                                                                                                                    </td>
+                                                </tr>
+                                                <tr class="code-row">
+                                                    <td align="left" colspan="1">
+                                                        MXIK kodi
+                                                    </td>
+                                                    <td align="right" colspan="2">
+                                                        09903001001000000                                                    </td>
+                                                </tr>
+                                                <tr class="code-row">
+                                                    
+                                                        <td align="left" colspan="1">
+                                                            MXIK nomi
+                                                        </td>
+                                                        <td align="right" colspan="2">
+                                                            Gaz taminoti xizmatlari                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr class="code-row">
+                                                        
+                                                        <td align="left" colspan="1">
+                                                            O'lchov birligi
+                                                        </td>
+                                                        <td align="right" colspan="2">
+                                                            kub. metr                                                        </td>
+                                                    </tr>
+                                                
+                                                <tr class="code-row">
+                                                    <td align="left" colspan="1">
+                                                        Markirovka kodi
+                                                    </td>
+                                                    <td align="right" colspan="2" style="width: 50%">
+                                                                                                                                                                    </td>
+                                                </tr>
+                                                
+                                                <tr class="code-row">
+                                                    <td align="left" colspan="1">
+                                                        Komitent STIR/JSHSHIR
+                                                    </td>
+                                                    <td align="right" colspan="2">
+                                                        306605769                                                    </td>
+                                                </tr>
+
+                                                                                        </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding-top: 3px" colspan="2">Naqd pul</td>
+                                    <td style="padding-top: 3px"
+                                        align="right">50,000.00 </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Bank kartalari</td>
+                                    <td align="right"> 0.00 </td>
+                                </tr>
+                                                                <tr>
+                                    <td colspan="2" style="font-size: 16pt;font-weight: bold">Jami to`lov:</td>
+                                    <td style="font-size: 18pt;font-weight: bold"
+                                        align="right">50,000.00</td>
+                                </tr>
+                                                                <tr>
+                                    <td colspan="2">Umumiy QQS qiymati</td>
+                                    <td align="right"> 5,357.14 </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        Fiskal belgi
+                                    </tD>
+
+                                    <td align="right">363628641203</td>
+                                </tr>
+
+
+                                
+                                <!--                                <tr>-->
+                                <!--                                    <td style="padding: 3px 0"  colspan="2">-->
+                                <!--                                        Fiskal belgi-->
+                                <!--                                    </tD>-->
+                                <!---->
+                                <!--                                    <td style="padding: 3px 0" align="right">-->
+                                <!--</td>-->
+                                <!--                                </tr>-->
+                                                            </table>
+                        </div>
+
+
+                                                <div style="text-align: center">
+                            <img src="data:image/png;base64,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">
+                        </div>
+
+
+                        
+
+                                        </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<style>
+    .markirovka_class {
+        border-radius: 62px;
+        background-color: blue;
+    }
+
+    .markirovka_class span {
+        color: white !important;
+        font-weight: 900;
+        padding: 1px;
+    }
+
+    .modal-content {
+        width: 80%;
+        margin: auto;
+    }
+
+    .modal-body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .modal-container {
+        text-align: center;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .item-list,
+    .modal-title {
+        font-family: "Montserrat";
+    }
+</style>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Markirovka kodlari</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="my-modal-label">
+                <div class="modal-container">
+                    <table id="item-list" class="table table-bordered table-striped"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/assets/1ebabcd8/jquery.js"></script>
+<script src="/assets/b625197e/yii.js"></script>
+<script src="/js/jquery.js"></script>
+<script src="/js/popper.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
+<script src="/js/slideout.min.js"></script>
+<script src="/js/wow.js"></script>
+<script src="/js/default.js"></script>
+<script src="/js/main.js"></script>
+<script>jQuery(function ($) {
+$(".button-x-mobile").click(function (){
+    $(".reklama-mobile").addClass("display-none");
+    $(".tickets").css("margin-top", "20px");
+})
+
+ $(document).ready(function (e) {
+    
+    function renderItems(items) {
+        const itemList = document.getElementById('item-list');
+        const tbody = document.createElement('tbody');
+        itemList.innerHTML = '';
+        
+        let counter = 1;
+        for (const item of items) {
+            const tr = document.createElement('tr');
+            const td1 = document.createElement('td');
+            const td2 = document.createElement('td');
+            td1.textContent = counter; 
+            td2.textContent = item.replace(/&amp;/g, '&');
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tbody.appendChild(tr);
+            counter++;
+        }
+        itemList.innerHTML += '<thead><tr><th scope="col">№</th><th scope="col">Markirovka kodi</th></tr></thead>';
+        itemList.appendChild(tbody);
+    }
+    
+     $('.markirovka_class').on('click', function (e) {
+         
+         var items = $(this).next().html();
+         let resultArray = items.split('###')
+                            .map(item => item.trim())
+                            .filter(item => item);
+         renderItems(resultArray);
+        $('#exampleModalLong').modal('toggle');
+    });
+  });
+});</script></body>
+</html>

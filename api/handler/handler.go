@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"gateway/genproto/ishlab_chiqarish"
+	"gateway/genproto/contract"
 	"gateway/genproto/user"
 	"log/slog"
 	"gateway/redis"
@@ -12,12 +12,12 @@ import (
 type Handler struct {
 	UserService user.UserServiceClient
 	Log         *slog.Logger
-	ProductionService ishlab_chiqarish.IshlabChiqarishServiceClient
+	ProductionService contract.ContractServiceClient
 	Enforcer    *casbin.Enforcer
 	Redis       *redis.RedisRepo
 }
 
-func NewHandler(user user.UserServiceClient, production ishlab_chiqarish.IshlabChiqarishServiceClient, logger *slog.Logger, Enforcer *casbin.Enforcer, Redis *redis.RedisRepo) *Handler {
+func NewHandler(user user.UserServiceClient, production contract.ContractServiceClient, logger *slog.Logger, Enforcer *casbin.Enforcer, Redis *redis.RedisRepo) *Handler {
 	return &Handler{
 		UserService: user,
 		Log:         logger,

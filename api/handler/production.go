@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	pbp "gateway/genproto/ishlab_chiqarish"
+	pbp "gateway/genproto/contract"
 	"gateway/models"
 	"net/http"
 	"path/filepath"

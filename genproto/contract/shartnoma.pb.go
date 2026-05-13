@@ -4,7 +4,7 @@
 // 	protoc        v5.29.2
 // source: ner-apk-proto/ishlab_chiqarish/shartnoma.proto
 
-package ishlab_chiqarish
+package contract
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -1185,12 +1185,12 @@ var File_ner_apk_proto_ishlab_chiqarish_shartnoma_proto protoreflect.FileDescrip
 
 const file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDesc = "" +
 	"\n" +
-	".ner-apk-proto/ishlab_chiqarish/shartnoma.proto\x12\x10ishlab_chiqarish\"I\n" +
+	".ner-apk-proto/ishlab_chiqarish/shartnoma.proto\x12\bcontract\"I\n" +
 	"\x1dNewInsideTheContractGetAllReq\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x05R\x05limit\x12\x12\n" +
-	"\x04page\x18\x02 \x01(\x05R\x04page\"Z\n" +
-	"\x1dNewInsideTheContractGetAllRes\x129\n" +
-	"\x03all\x18\x01 \x03(\v2'.ishlab_chiqarish.NewInsideTheContracttR\x03all\"\xce\x01\n" +
+	"\x04page\x18\x02 \x01(\x05R\x04page\"R\n" +
+	"\x1dNewInsideTheContractGetAllRes\x121\n" +
+	"\x03all\x18\x01 \x03(\v2\x1f.contract.NewInsideTheContracttR\x03all\"\xce\x01\n" +
 	"\x15NewInsideTheContractt\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1f\n" +
 	"\vcontract_id\x18\x02 \x01(\tR\n" +
@@ -1224,9 +1224,9 @@ const file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDesc = "" +
 	"\amessage\x18\x01 \x01(\tR\amessage\"@\n" +
 	"\x14NewContractGetAllReq\x12\x14\n" +
 	"\x05limit\x18\x01 \x01(\x03R\x05limit\x12\x12\n" +
-	"\x04page\x18\x02 \x01(\x03R\x04page\"N\n" +
-	"\x14NewContractGetAllRes\x126\n" +
-	"\bcontract\x18\x01 \x03(\v2\x1a.ishlab_chiqarish.ContractR\bcontract\"+\n" +
+	"\x04page\x18\x02 \x01(\x03R\x04page\"F\n" +
+	"\x14NewContractGetAllRes\x12.\n" +
+	"\bcontract\x18\x01 \x03(\v2\x12.contract.ContractR\bcontract\"+\n" +
 	"\x15NewContractGetNameReq\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"\xfd\x01\n" +
 	"\x15NewContractGetNameRes\x12\x0e\n" +
@@ -1267,17 +1267,17 @@ const file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDesc = "" +
 	"\n" +
 	"created_at\x18\a \x01(\tR\tcreatedAt\x12\x1d\n" +
 	"\n" +
-	"updated_at\x18\b \x01(\tR\tupdatedAt2\xf0\a\n" +
-	"\x16IshlabChiqarishService\x12Q\n" +
-	"\vNewContract\x12 .ishlab_chiqarish.NewContractReq\x1a .ishlab_chiqarish.NewContractRes\x12c\n" +
-	"\x11NewContractUpdate\x12&.ishlab_chiqarish.NewContractUpdateReq\x1a&.ishlab_chiqarish.NewContractUpdateRes\x12c\n" +
-	"\x11NewContractDelete\x12&.ishlab_chiqarish.NewContractDeleteReq\x1a&.ishlab_chiqarish.NewContractDeleteRes\x12f\n" +
-	"\x12NewContractGetName\x12'.ishlab_chiqarish.NewContractGetNameReq\x1a'.ishlab_chiqarish.NewContractGetNameRes\x12c\n" +
-	"\x11NewContractGetAll\x12&.ishlab_chiqarish.NewContractGetAllReq\x1a&.ishlab_chiqarish.NewContractGetAllRes\x12l\n" +
-	"\x14NewInsideTheContract\x12).ishlab_chiqarish.NewInsideTheContractReq\x1a).ishlab_chiqarish.NewInsideTheContractRes\x12~\n" +
-	"\x1aNewInsideTheContractUpdate\x12/.ishlab_chiqarish.NewInsideTheContractUpdateReq\x1a/.ishlab_chiqarish.NewInsideTheContractUpdateRes\x12~\n" +
-	"\x1aNewInsideTheContractDelete\x12/.ishlab_chiqarish.NewInsideTheContractDeleteReq\x1a/.ishlab_chiqarish.NewInsideTheContractDeleteRes\x12~\n" +
-	"\x1aNewInsideTheContractGetAll\x12/.ishlab_chiqarish.NewInsideTheContractGetAllReq\x1a/.ishlab_chiqarish.NewInsideTheContractGetAllResB\x1bZ\x19genproto/ishlab_chiqarishb\x06proto3"
+	"updated_at\x18\b \x01(\tR\tupdatedAt2\xd9\x06\n" +
+	"\x0fContractService\x12A\n" +
+	"\vNewContract\x12\x18.contract.NewContractReq\x1a\x18.contract.NewContractRes\x12S\n" +
+	"\x11NewContractUpdate\x12\x1e.contract.NewContractUpdateReq\x1a\x1e.contract.NewContractUpdateRes\x12S\n" +
+	"\x11NewContractDelete\x12\x1e.contract.NewContractDeleteReq\x1a\x1e.contract.NewContractDeleteRes\x12V\n" +
+	"\x12NewContractGetName\x12\x1f.contract.NewContractGetNameReq\x1a\x1f.contract.NewContractGetNameRes\x12S\n" +
+	"\x11NewContractGetAll\x12\x1e.contract.NewContractGetAllReq\x1a\x1e.contract.NewContractGetAllRes\x12\\\n" +
+	"\x14NewInsideTheContract\x12!.contract.NewInsideTheContractReq\x1a!.contract.NewInsideTheContractRes\x12n\n" +
+	"\x1aNewInsideTheContractUpdate\x12'.contract.NewInsideTheContractUpdateReq\x1a'.contract.NewInsideTheContractUpdateRes\x12n\n" +
+	"\x1aNewInsideTheContractDelete\x12'.contract.NewInsideTheContractDeleteReq\x1a'.contract.NewInsideTheContractDeleteRes\x12n\n" +
+	"\x1aNewInsideTheContractGetAll\x12'.contract.NewInsideTheContractGetAllReq\x1a'.contract.NewInsideTheContractGetAllResB\x13Z\x11genproto/contractb\x06proto3"
 
 var (
 	file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDescOnce sync.Once
@@ -1293,48 +1293,48 @@ func file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_rawDescGZIP() []byte {
 
 var file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_msgTypes = make([]protoimpl.MessageInfo, 20)
 var file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_goTypes = []any{
-	(*NewInsideTheContractGetAllReq)(nil), // 0: ishlab_chiqarish.NewInsideTheContractGetAllReq
-	(*NewInsideTheContractGetAllRes)(nil), // 1: ishlab_chiqarish.NewInsideTheContractGetAllRes
-	(*NewInsideTheContractt)(nil),         // 2: ishlab_chiqarish.NewInsideTheContractt
-	(*NewInsideTheContractDeleteReq)(nil), // 3: ishlab_chiqarish.NewInsideTheContractDeleteReq
-	(*NewInsideTheContractDeleteRes)(nil), // 4: ishlab_chiqarish.NewInsideTheContractDeleteRes
-	(*NewInsideTheContractUpdateReq)(nil), // 5: ishlab_chiqarish.NewInsideTheContractUpdateReq
-	(*NewInsideTheContractUpdateRes)(nil), // 6: ishlab_chiqarish.NewInsideTheContractUpdateRes
-	(*NewInsideTheContractReq)(nil),       // 7: ishlab_chiqarish.NewInsideTheContractReq
-	(*NewInsideTheContractRes)(nil),       // 8: ishlab_chiqarish.NewInsideTheContractRes
-	(*NewContractGetAllReq)(nil),          // 9: ishlab_chiqarish.NewContractGetAllReq
-	(*NewContractGetAllRes)(nil),          // 10: ishlab_chiqarish.NewContractGetAllRes
-	(*NewContractGetNameReq)(nil),         // 11: ishlab_chiqarish.NewContractGetNameReq
-	(*NewContractGetNameRes)(nil),         // 12: ishlab_chiqarish.NewContractGetNameRes
-	(*NewContractDeleteReq)(nil),          // 13: ishlab_chiqarish.NewContractDeleteReq
-	(*NewContractDeleteRes)(nil),          // 14: ishlab_chiqarish.NewContractDeleteRes
-	(*NewContractUpdateReq)(nil),          // 15: ishlab_chiqarish.NewContractUpdateReq
-	(*NewContractUpdateRes)(nil),          // 16: ishlab_chiqarish.NewContractUpdateRes
-	(*NewContractReq)(nil),                // 17: ishlab_chiqarish.NewContractReq
-	(*NewContractRes)(nil),                // 18: ishlab_chiqarish.NewContractRes
-	(*Contract)(nil),                      // 19: ishlab_chiqarish.Contract
+	(*NewInsideTheContractGetAllReq)(nil), // 0: contract.NewInsideTheContractGetAllReq
+	(*NewInsideTheContractGetAllRes)(nil), // 1: contract.NewInsideTheContractGetAllRes
+	(*NewInsideTheContractt)(nil),         // 2: contract.NewInsideTheContractt
+	(*NewInsideTheContractDeleteReq)(nil), // 3: contract.NewInsideTheContractDeleteReq
+	(*NewInsideTheContractDeleteRes)(nil), // 4: contract.NewInsideTheContractDeleteRes
+	(*NewInsideTheContractUpdateReq)(nil), // 5: contract.NewInsideTheContractUpdateReq
+	(*NewInsideTheContractUpdateRes)(nil), // 6: contract.NewInsideTheContractUpdateRes
+	(*NewInsideTheContractReq)(nil),       // 7: contract.NewInsideTheContractReq
+	(*NewInsideTheContractRes)(nil),       // 8: contract.NewInsideTheContractRes
+	(*NewContractGetAllReq)(nil),          // 9: contract.NewContractGetAllReq
+	(*NewContractGetAllRes)(nil),          // 10: contract.NewContractGetAllRes
+	(*NewContractGetNameReq)(nil),         // 11: contract.NewContractGetNameReq
+	(*NewContractGetNameRes)(nil),         // 12: contract.NewContractGetNameRes
+	(*NewContractDeleteReq)(nil),          // 13: contract.NewContractDeleteReq
+	(*NewContractDeleteRes)(nil),          // 14: contract.NewContractDeleteRes
+	(*NewContractUpdateReq)(nil),          // 15: contract.NewContractUpdateReq
+	(*NewContractUpdateRes)(nil),          // 16: contract.NewContractUpdateRes
+	(*NewContractReq)(nil),                // 17: contract.NewContractReq
+	(*NewContractRes)(nil),                // 18: contract.NewContractRes
+	(*Contract)(nil),                      // 19: contract.Contract
 }
 var file_ner_apk_proto_ishlab_chiqarish_shartnoma_proto_depIdxs = []int32{
-	2,  // 0: ishlab_chiqarish.NewInsideTheContractGetAllRes.all:type_name -> ishlab_chiqarish.NewInsideTheContractt
-	19, // 1: ishlab_chiqarish.NewContractGetAllRes.contract:type_name -> ishlab_chiqarish.Contract
-	17, // 2: ishlab_chiqarish.IshlabChiqarishService.NewContract:input_type -> ishlab_chiqarish.NewContractReq
-	15, // 3: ishlab_chiqarish.IshlabChiqarishService.NewContractUpdate:input_type -> ishlab_chiqarish.NewContractUpdateReq
-	13, // 4: ishlab_chiqarish.IshlabChiqarishService.NewContractDelete:input_type -> ishlab_chiqarish.NewContractDeleteReq
-	11, // 5: ishlab_chiqarish.IshlabChiqarishService.NewContractGetName:input_type -> ishlab_chiqarish.NewContractGetNameReq
-	9,  // 6: ishlab_chiqarish.IshlabChiqarishService.NewContractGetAll:input_type -> ishlab_chiqarish.NewContractGetAllReq
-	7,  // 7: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContract:input_type -> ishlab_chiqarish.NewInsideTheContractReq
-	5,  // 8: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractUpdate:input_type -> ishlab_chiqarish.NewInsideTheContractUpdateReq
-	3,  // 9: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractDelete:input_type -> ishlab_chiqarish.NewInsideTheContractDeleteReq
-	0,  // 10: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractGetAll:input_type -> ishlab_chiqarish.NewInsideTheContractGetAllReq
-	18, // 11: ishlab_chiqarish.IshlabChiqarishService.NewContract:output_type -> ishlab_chiqarish.NewContractRes
-	16, // 12: ishlab_chiqarish.IshlabChiqarishService.NewContractUpdate:output_type -> ishlab_chiqarish.NewContractUpdateRes
-	14, // 13: ishlab_chiqarish.IshlabChiqarishService.NewContractDelete:output_type -> ishlab_chiqarish.NewContractDeleteRes
-	12, // 14: ishlab_chiqarish.IshlabChiqarishService.NewContractGetName:output_type -> ishlab_chiqarish.NewContractGetNameRes
-	10, // 15: ishlab_chiqarish.IshlabChiqarishService.NewContractGetAll:output_type -> ishlab_chiqarish.NewContractGetAllRes
-	8,  // 16: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContract:output_type -> ishlab_chiqarish.NewInsideTheContractRes
-	6,  // 17: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractUpdate:output_type -> ishlab_chiqarish.NewInsideTheContractUpdateRes
-	4,  // 18: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractDelete:output_type -> ishlab_chiqarish.NewInsideTheContractDeleteRes
-	1,  // 19: ishlab_chiqarish.IshlabChiqarishService.NewInsideTheContractGetAll:output_type -> ishlab_chiqarish.NewInsideTheContractGetAllRes
+	2,  // 0: contract.NewInsideTheContractGetAllRes.all:type_name -> contract.NewInsideTheContractt
+	19, // 1: contract.NewContractGetAllRes.contract:type_name -> contract.Contract
+	17, // 2: contract.ContractService.NewContract:input_type -> contract.NewContractReq
+	15, // 3: contract.ContractService.NewContractUpdate:input_type -> contract.NewContractUpdateReq
+	13, // 4: contract.ContractService.NewContractDelete:input_type -> contract.NewContractDeleteReq
+	11, // 5: contract.ContractService.NewContractGetName:input_type -> contract.NewContractGetNameReq
+	9,  // 6: contract.ContractService.NewContractGetAll:input_type -> contract.NewContractGetAllReq
+	7,  // 7: contract.ContractService.NewInsideTheContract:input_type -> contract.NewInsideTheContractReq
+	5,  // 8: contract.ContractService.NewInsideTheContractUpdate:input_type -> contract.NewInsideTheContractUpdateReq
+	3,  // 9: contract.ContractService.NewInsideTheContractDelete:input_type -> contract.NewInsideTheContractDeleteReq
+	0,  // 10: contract.ContractService.NewInsideTheContractGetAll:input_type -> contract.NewInsideTheContractGetAllReq
+	18, // 11: contract.ContractService.NewContract:output_type -> contract.NewContractRes
+	16, // 12: contract.ContractService.NewContractUpdate:output_type -> contract.NewContractUpdateRes
+	14, // 13: contract.ContractService.NewContractDelete:output_type -> contract.NewContractDeleteRes
+	12, // 14: contract.ContractService.NewContractGetName:output_type -> contract.NewContractGetNameRes
+	10, // 15: contract.ContractService.NewContractGetAll:output_type -> contract.NewContractGetAllRes
+	8,  // 16: contract.ContractService.NewInsideTheContract:output_type -> contract.NewInsideTheContractRes
+	6,  // 17: contract.ContractService.NewInsideTheContractUpdate:output_type -> contract.NewInsideTheContractUpdateRes
+	4,  // 18: contract.ContractService.NewInsideTheContractDelete:output_type -> contract.NewInsideTheContractDeleteRes
+	1,  // 19: contract.ContractService.NewInsideTheContractGetAll:output_type -> contract.NewInsideTheContractGetAllRes
 	11, // [11:20] is the sub-list for method output_type
 	2,  // [2:11] is the sub-list for method input_type
 	2,  // [2:2] is the sub-list for extension type_name

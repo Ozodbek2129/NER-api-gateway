@@ -2,7 +2,7 @@ package client
 
 import (
 	"gateway/config"
-	"gateway/genproto/ishlab_chiqarish"
+	"gateway/genproto/contract"
 	"gateway/genproto/user"
 
 	"google.golang.org/grpc"
@@ -11,19 +11,19 @@ import (
 
 type ServiceManager interface {
 	UserService() user.UserServiceClient
-	Productionservice() ishlab_chiqarish.IshlabChiqarishServiceClient
+	Productionservice() contract.ContractServiceClient
 }
 
 type serviceManagerImpl struct {
 	userClient user.UserServiceClient
-	productionClient ishlab_chiqarish.IshlabChiqarishServiceClient
+	productionClient contract.ContractServiceClient
 }
 
 func (s *serviceManagerImpl) UserService() user.UserServiceClient {
 	return s.userClient
 }
 
-func (s *serviceManagerImpl) Productionservice() ishlab_chiqarish.IshlabChiqarishServiceClient {
+func (s *serviceManagerImpl) Productionservice() contract.ContractServiceClient {
 	return s.productionClient
 }
 
@@ -46,6 +46,6 @@ func NewServiceManager() (ServiceManager, error) {
 
 	return &serviceManagerImpl{
 		userClient: user.NewUserServiceClient(connUser),
-		productionClient: ishlab_chiqarish.NewIshlabChiqarishServiceClient(connDocs),
+		productionClient: contract.NewContractServiceClient(connDocs),
 	}, nil
 }
