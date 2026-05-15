@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"gateway/api"
 	"gateway/api/handler"
 	"gateway/casbin"
@@ -9,6 +8,7 @@ import (
 	"gateway/pkg/client"
 	"gateway/pkg/logger"
 	"gateway/redis"
+	"log"
 
 	"github.com/gin-gonic/gin"
 )
@@ -49,6 +49,7 @@ func main() {
 	h := handler.NewHandler(
 		serviceManager.UserService(),
 		serviceManager.Productionservice(),
+		serviceManager.Employeeservice(),
 		logger,
 		enforcer,
 		redisClient,

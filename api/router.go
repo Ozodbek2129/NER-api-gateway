@@ -84,4 +84,28 @@ func (c *controllerImpl) SetupRoutes(h handler.Handler, logger *slog.Logger) {
 		contract.DELETE("/insidecontract_delete/:id", h.NewInsideTheContractDelete)
 		contract.GET("/all_insidecontract", h.NewInsideTheContractGetAll)
 	}
+
+	employee := router.Group("/employee")
+	{
+		employee.POST("/creategroup", h.CreateGroup)
+		employee.PUT("/updategroup", h.UpdateGroup)
+		employee.DELETE("/deletegroup/:id", h.DeleteGroup)
+		employee.GET("/getallgroup", h.GetAllGroup)
+
+		employee.POST("/createworker", h.CreateWorker)
+		employee.PUT("/updateworker", h.UpdateWorker)
+		employee.DELETE("/deleteworker/:id", h.DeleteWorker)
+		employee.GET("/getallworker", h.GetAllWorker)
+
+		employee.POST("/createattendace", h.CreateAttendance)
+		employee.PUT("/updateattendace", h.UpdateAttendance)
+		employee.DELETE("/deleteattendance", h.DeleteAttendance)
+		employee.GET("/getdailyattendace", h.GetDailyAttendance)
+		employee.GET("/getallattendace", h.GetAllAttendance)
+
+		employee.POST("/createtask", h.CreateTask)
+		employee.PUT("/updatetask", h.UpdateTask)
+		employee.DELETE("/deletetask/:id", h.DeleteTask)
+		employee.GET("getalltask", h.GetAllTask)
+	}
 }
