@@ -106,6 +106,6 @@ func (c *controllerImpl) SetupRoutes(h handler.Handler, logger *slog.Logger) {
 		employee.POST("/createtask", h.CreateTask)
 		employee.PUT("/updatetask", h.UpdateTask)
 		employee.DELETE("/deletetask/:id", h.DeleteTask)
-		employee.GET("getalltask", h.GetAllTask)
+		employee.GET("/getalltask", h.GetAllTask)
 	}
 }
