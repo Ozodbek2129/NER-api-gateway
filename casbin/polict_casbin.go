@@ -70,6 +70,27 @@ func CasbinEnforcer(logger *slog.Logger) (*casbin.Enforcer, error) {
 		// user
 		{"user", "/api/user/update_password", "PUT"},
 		{"user", "/api/user/logout", "POST"},
+
+		{"user", "/api/employee/creategroup", "POST"},
+		{"user", "/api/employee/updategroup", "PUT"},
+		{"user", "/api/employee/deletegroup/:id", "DELETE"},
+		{"user", "/api/employee/getallgroup", "GET"},
+		
+		{"user", "/api/employee/createworker", "POST"},
+		{"user", "/api/employee/updateworker", "PUT"},
+		{"user", "/api/employee/deleteworker/:id", "DELETE"},
+		{"user", "/api/employee/getallworker", "GET"},
+
+		{"user", "/api/employee/createattendace", "POST"},
+		{"user", "/api/employee/updateattendace", "PUT"},
+		{"user", "/api/employee/deleteattendance", "DELETE"},
+		{"user", "/api/employee/getdailyattendace", "GET"},
+		{"user", "/api/employee/getallattendace", "GET"},
+		
+		{"user", "/api/employee/createtask", "POST"},
+		{"user", "/api/employee/updatetask", "PUT"},
+		{"user", "/api/employee/deletetask/:id", "DELETE"},
+		{"user", "/api/employee/getalltask", "GET"},
 	}
 
 	// duplicate qo‘shilmasligi uchun
